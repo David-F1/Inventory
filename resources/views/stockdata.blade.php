@@ -188,24 +188,24 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form methode="post" action="{{ url('/stock/update/'.$stock->id)}}">
+          <form methode="post" action="{{ url('/stock/update/'.$stocks->id)}}">
           <div class="card-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">Designation</label>
-                <input type="text" name="A_Nom" value="{{ $stock->A_Nom }}" class="form-control"  placeholder="Entrer le Nom d'article">
+                <input type="text" name="A_Nom" value="{{ $stocks->A_Nom }}" class="form-control"  placeholder="Entrer le Nom d'article">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Categorie</label>
-                <input type="text" name="A_Categorie" value="{{ $stock->A_Categorie }}" class="form-control"  placeholder="Categorie">
+                <input type="text" name="A_Categorie" value="{{ $stocks->A_Categorie }}" class="form-control"  placeholder="Categorie">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Model</label>
-                <input name="A_Model" value="{{ $stock->A_Model }}" type="text" class="form-control"  placeholder="Entrer le model">
+                <input name="A_Model" value="{{ $stocks->A_Model }}" type="text" class="form-control"  placeholder="Entrer le model">
               </div>
 
               <div class="form-group">
                 <label for="exampleInputPassword1">Quantite</label>
-                <input name="A_Quantite" value="{{ $stock->A_Quantite }}" type="text" class="form-control"  placeholder="Entrer la quantite">
+                <input name="A_Quantite" value="{{ $stocks->A_Quantite }}" type="text" class="form-control"  placeholder="Entrer la quantite">
               </div>
               
             </div>

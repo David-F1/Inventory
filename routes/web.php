@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/stock',[StockController::class, 'index']);
-Route::post('/stock/store',[StockController::class, 'store']);
+Route::any('/stock/store',[StockController::class, 'store']);
 Route::get('/stock/create', [StockController::class, 'create']);
-//Route::get('/stock/edit/{id}', [StockController::class, 'edit']);
-Route::post('/stock/update/{id}', [StockController::class, 'update']);
+Route::get('/stock/edit/{id}', [StockController::class, 'edit']);
+Route::any('/stock/update/{id}', [StockController::class, 'update']);

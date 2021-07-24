@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class StockController extends Controller
 {
@@ -45,6 +46,7 @@ class StockController extends Controller
         $stock->A_Model = $request->input('A_Model');
         $stock->A_Quantite = $request->input('A_Quantite');
         $stock->save();
+
         redirect('/stock');
     }
 
@@ -72,7 +74,7 @@ class StockController extends Controller
     {
         $stock = Article::find('id');
 
-        return view('stock',['layout'=>'edit']);
+        return view('stock',['stocks'=>$stock,'layout'=>'edit']);
     }
 
     /**
@@ -84,7 +86,7 @@ class StockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //update the record in data base
+        //update the record in data bases
         $stock = Article::find('id');
         $stock->A_Nom = $request->input('A_Nom');
         $stock->A_Categorie = $request->input('A_Categorie');
