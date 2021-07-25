@@ -49,7 +49,7 @@
                 <td>{{ $stock->A_Quantite }}</td>
                 <td>{{ $stock->A_Categorie }}</td> 
                 <td>
-                    <a href="#" class="btn btn-primary btn-sm">
+                    <a href="{{ url('/stock/show/'.$stock->id) }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-folder">
                           </i>
                           View
@@ -59,13 +59,33 @@
                           </i>
                           Edit
                     </a>
-                    <a href="{{url('/stock/delete/'.$stock->id)}}" class="btn btn-danger btn-sm " >
+                    <a href="#" class="btn btn-danger btn-sm " data-toggle="modal" data-target="#modal-danger" >
                     <i class="fas fa-trash">
                           </i>
                           Delete
                     </a>
                 </td>               
               </tr>
+
+         <div class="modal fade" id="modal-danger">
+        <div class="modal-dialog">
+          <div class="modal-content bg-danger">
+            <div class="modal-header">
+              <h4 class="modal-title">Danger </h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you wanna delete this Article ? &hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+              <a href="{{url('/stock/delete/'.$stock->id)}}" type="button" class="btn btn-outline-light">Confirm</a>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
               @endforeach
               </tbody>
               
@@ -155,7 +175,42 @@
 
 
 @elseif($layout=='show')
+<div class="col-md-3">
+  <div class="card card-primary">
+              <div class="card-header">
+                <strong><h1 class="card-title">About {{ $stock->A_Nom }}</h1></strong>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong> Designation</strong>
 
+                <p class="text-muted">
+                {{ $stock->A_Nom }}
+                </p>
+
+                <hr>
+
+                <strong> Model</strong>
+
+                <p class="text-muted">{{ $stock->A_Model }}</p>
+
+                <hr>
+
+                <strong> Quantite</strong>
+
+                <p class="text-muted">
+                {{ $stock->A_Quantite }}
+                </p>
+
+                <hr>
+
+                <strong> Categorie</strong>
+
+                <p class="text-muted">{{ $stock->A_Categorie }}</p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            </div>
 
 @elseif($layout=='edit')
 

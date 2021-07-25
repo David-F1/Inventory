@@ -61,7 +61,7 @@ class StockController extends Controller
         //search 
         $stock = Article::find($id);
 
-        return view('stock',['layout'=>'show']);
+        return view('stock',['stock'=>$stock,'layout'=>'show']);
     }
 
     /**

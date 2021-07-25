@@ -22,3 +22,4 @@ Route::get('/stock/create', [StockController::class, 'create']);
 Route::get('/stock/edit/{id}', [StockController::class, 'edit']);
 Route::any('/stock/update/{id}', [StockController::class, 'update']);
 Route::get('/stock/delete/{id}', [StockController::class, 'destroy']);
+Route::get('/stock/show/{id}', [StockController::class, 'show']);

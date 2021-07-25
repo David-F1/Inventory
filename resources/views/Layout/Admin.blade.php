@@ -206,7 +206,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Entree Suivi
@@ -216,7 +216,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Sortir Suivi
@@ -226,8 +226,8 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-chart-bar"></i>
               <p>
                 Analyse
                 
