@@ -14,12 +14,11 @@ use App\Http\Controllers\StockController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[StockController::class, 'index']);
 
 Route::get('/stock',[StockController::class, 'index']);
 Route::any('/stock/store',[StockController::class, 'store']);
 Route::get('/stock/create', [StockController::class, 'create']);
 Route::get('/stock/edit/{id}', [StockController::class, 'edit']);
 Route::any('/stock/update/{id}', [StockController::class, 'update']);
+Route::get('/stock/delete/{id}', [StockController::class, 'destroy']);

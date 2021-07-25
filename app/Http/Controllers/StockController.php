@@ -47,7 +47,7 @@ class StockController extends Controller
         $stock->A_Quantite = $request->input('A_Quantite');
         $stock->save();
 
-        redirect('/stock');
+        return redirect('/stock');
     }
 
     /**
@@ -59,7 +59,7 @@ class StockController extends Controller
     public function show($id)
     {
         //search 
-        $stock = Article::find('id');
+        $stock = Article::find($id);
 
         return view('stock',['layout'=>'show']);
     }
@@ -72,9 +72,9 @@ class StockController extends Controller
      */
     public function edit($id)
     {
-        $stock = Article::find('id');
+        $stock = Article::find($id);
 
-        return view('stock',['stocks'=>$stock,'layout'=>'edit']);
+        return view('stock',['stockt'=>$stock,'layout'=>'edit']);
     }
 
     /**
@@ -87,14 +87,14 @@ class StockController extends Controller
     public function update(Request $request, $id)
     {
         //update the record in data bases
-        $stock = Article::find('id');
+        $stock = Article::find($id);
         $stock->A_Nom = $request->input('A_Nom');
         $stock->A_Categorie = $request->input('A_Categorie');
         $stock->A_Model = $request->input('A_Model');
         $stock->A_Quantite = $request->input('A_Quantite');
         $stock->save();
 
-        redirect('/stock');
+        return redirect('/stock');
     }
 
     /**
@@ -106,8 +106,8 @@ class StockController extends Controller
     public function destroy($id)
     {
         //delete
-        $stock = Article::find('id');
+        $stock = Article::find($id);
         $stock->delete();
-        redirect('/stock');
+        return redirect('/stock');
     }
 }
